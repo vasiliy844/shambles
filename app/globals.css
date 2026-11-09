@@ -7,7 +7,10 @@ body {
 }
 
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
   line-height: 1.5;
   color: #111;
   background: #fff;
@@ -17,4 +20,19 @@ main {
   max-width: 720px;
   margin: 0 auto;
   padding: 24px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+/* Показываем вертикальный баннер только на экранах шире 1200px */
+@media (min-width: 1200px) {
+  .side-banner {
+    display: block !important;
+  }
 }

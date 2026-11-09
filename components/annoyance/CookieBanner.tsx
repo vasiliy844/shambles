@@ -20,11 +20,8 @@ export function CookieBanner({ delay = 1500, onAccept, onClose }: Props) {
   // Показываем первый баннер с задержкой, если пользователь ещё не принял.
   // localStorage доступен только в браузере, поэтому проверка — внутри useEffect.
   useEffect(() => {
-    const saved = localStorage.getItem("cookie-consent");
-    if (saved === "accepted") {
-      setVisible(false);
-      return;
-    }
+    // Мы сохраняем согласие, но НЕ читаем его. Это сатира:
+    // «Мы уважаем ваш выбор, но спрашиваем ещё раз на всякий случай».
     const timer = setTimeout(() => setVisible(true), delay);
     return () => clearTimeout(timer);
   }, [delay]);
